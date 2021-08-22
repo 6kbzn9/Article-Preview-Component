@@ -24,7 +24,7 @@ body {
 }
 
 .wrapper {
-  width: clamp(280px, 90%, 400px);
+  width: clamp(280px, 90%, 350px);
   margin: 0 auto;
   padding: 7rem 0;
 }
@@ -37,10 +37,10 @@ body {
 
 .top {
   border-radius: 10px 10px 0 0;
-}
-
-.header-img {
-  width: 100%;
+  display: flex;
+  height: 220px;
+  background: url(images/drawers.jpg) center top no-repeat;
+  background-size: cover;
 }
 
 .bottom {
@@ -132,6 +132,9 @@ body {
   text-decoration: none;
   color: #fff;
 }
+.desktop {
+  display: none;
+}
 .mobile {
   z-index: 2;
   width: 100%;
@@ -164,12 +167,6 @@ body {
   margin-right: 1.2rem;
 }
 
-.links.desktop {
-  pointer-events: none;
-  opacity: 0;
-  display: none;
-}
-
 @media screen and (max-width: 355px) {
   .main {
     padding: 2rem 1.5rem;
@@ -179,5 +176,74 @@ body {
   }
   .mobile {
     padding: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 755px) {
+  .mobile {
+    display: none;
+  }
+  body {
+    display: flex;
+    align-items: center;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: clamp(280px, 90%, 740px);
+    padding: 0;
+  }
+  .top {
+    height: auto;
+    background-position: top left;
+    border-radius: 10px 0 0 10px;
+  }
+  .bottom {
+    border-radius: 0 10px 10px 0;
+    overflow: visible;
+  }
+  .main {
+    padding: 2.5rem 2.5rem 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .profile {
+    padding-top: 1rem;
+  }
+  .links span {
+    margin-right: 0;
+  }
+
+  .desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    padding: 1.5rem 2.5rem;
+    border-radius: 10px;
+    top: 0;
+    right: 18%;
+    pointer-events: none;
+    transform: scale(0);
+    transform-origin: right center;
+    transition: 350ms ease-in-out;
+  }
+  .desktop::after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: inherit;
+    right: -8px;
+    transform: rotate(45deg);
+  }
+  .desktop.active {
+    transform: scale(1);
+    right: 22%;
+    pointer-events: all;
+  }
+  .desktop .icon {
+    display: flex;
   }
 }
