@@ -114,6 +114,7 @@ body {
   position: relative;
   z-index: 3;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 
@@ -151,7 +152,7 @@ body {
 }
 .mobile .animate {
   opacity: 0;
-  transition: opacity 350ms ease-in-out;
+  transition: opacity 450ms ease-in-out;
   transition-delay: 0ms;
 }
 .mobile.active .animate {
