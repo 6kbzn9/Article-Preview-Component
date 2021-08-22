@@ -81,7 +81,7 @@ body {
 
 .details {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 .details img {
   width: 40px;
@@ -113,6 +113,8 @@ body {
   border-radius: 50%;
   position: relative;
   z-index: 3;
+  border: none;
+  cursor: pointer;
 }
 
 .links {
